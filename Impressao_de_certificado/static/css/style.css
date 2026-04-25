@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #0F172A;        /* A cor da área de trilha */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: rgba(30, 41, 59, 0.4);    /* A cor do slider */
+    border-radius: 20px;       /* Arredondamento do Slider */
+    border: none;
+  }
+
+
+
+/*COMEÇO DA IA*/
+.pentagono-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px; /* Aumentado para acomodar o desenho */
+    width: 100%;
+    position: relative;
+}
+
+.pentagono-wrapper {
+    position: relative;
+    width: 553px; /* Tamanho original da sua imagem */
+    height: 452px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo da imagem de fundo */
+.bl-fundo {
+    position: absolute;
+    width: 100%; /* Ela ocupará o tamanho do wrapper */
+    height: auto;
+    z-index: 1; /* Camada de baixo */
+    pointer-events: none; /* Garante que o clique passe para os escudos */
+    opacity: 0.8;
+}
+
+.escudo {
+    position: absolute;
+    width: 120px; /* Ajuste conforme necessário */
+    z-index: 2; /* Camada de cima */
+    transition: all 0.3s ease;
+}
+
+/* Posicionamento dos escudos sobre as pontas do desenho.
+   Ajuste o translateY para que o escudo caia certinho no meio de cada gomo azul.
+*/
+.time-1 { transform: rotate(0deg) translateY(-135px) rotate(0deg); }
+.time-2 { transform: rotate(72deg) translateY(-135px) rotate(-72deg); }
+.time-3 { transform: rotate(144deg) translateY(-135px) rotate(-144deg); }
+.time-4 { transform: rotate(216deg) translateY(-135px) rotate(-216deg); }
+.time-5 { transform: rotate(288deg) translateY(-135px) rotate(-288deg); }
+
+.escudo:hover {
+    transform: scale(1.2) !important; /* Mantém a posição mas aumenta o tamanho */
+    filter: drop-shadow(0 0 15px #0ea5e9);
+    cursor: pointer;
+}
+
+/* Ajuste para quando o usuário der Zoom / Telas Pequenas */
+@media (max-width: 600px) {
+    .time-1, .time-2, .time-3, .time-4, .time-5 {
+        translateY: -100px; /* Traz os escudos mais para perto no mobile */
+    }
+}
+/*FIM DA IA*/
+
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    background-image: url('../static/img/Blf.png');
+    background-size: cover;
+    background-position: center;
+    background-color: #0F172A;
+    color: #ffffff;
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+
+img {
+    object-fit: contain;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 2%;
+    margin-bottom: 30px;
+}
+
+.main-list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.main__title {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.cards-list {
+    display: flex;
+    padding: 0 5%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+    column-gap: 50px;
+    justify-content: center;
+}
+
+.card {
+    width: 350px;
+    height: 500px;
+    transition: 0.2s;
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.card__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+}
+
+.card__text {
+    border-top: 1px solid rgba(14, 165, 233, 1);
+    width: inherit;
+    display: flex;
+    padding: 50px 0 20px;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.card__title {
+    padding: 0 20px;
+    text-align: center;
+}
+.card__subtitle {
+    padding: 0 20px;
+    text-align: center;
+
+}
+
+.card__img {
+    padding: 30px;
+}
+
+.creat__link {
+    display: block;
+    width: inherit;
+    height: inherit;
+    background: url(../img/plus.svg) no-repeat;
+    background-size: 200px 200px;
+    background-position: center;
+}
+
+.card--creat:hover,
+.card:hover {
+    box-shadow: 0px 4px 10px rgba(14, 165, 233, 1);
+}
+
+.creat-form {
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.form__card {
+    width: 40%;
+    padding: 0 20px 20px;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form__inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.form__inputs label {
+    width: 80%;
+}
+
+.form__input {
+    background: #0F172A;
+    border-radius: 10px;
+    padding: 10px;
+    height: 30px;
+    color: #F8FAFC;
+    font: inherit;
+    border: none;
+    width: 94%;
+}
+
+.form__card label {
+    width: 80%;
+}
+
+.form__text {
+    background: #0F172A;
+    border-radius: 10px;
+    padding: 10px;
+    color: #F8FAFC;
+    font: inherit;
+    border: none;
+    width: 94%;
+}
+
+.form__button {
+    border: 1px solid rgba(14, 165, 233, 1);
+    background: #0F172A;
+    border-radius: 10px;
+    color: rgba(14, 165, 233, 1);
+    padding: 10px;
+    font: inherit;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.form__button:hover {
+    color: #F8FAFC;
+    background:  rgba(14, 165, 233, 1);
+}
+
+.main {
+    padding: 0 5%;
+}
+
+.main__block {
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__subtitle {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.main__text {
+    line-height: 30px;
+    margin-bottom: 40px;
+    white-space: pre-wrap;
+    align-self: flex-start;
+}
+
+.main__link {
+    display: block;
+    border: 1px solid rgba(14, 165, 233, 1);
+    background: #0F172A;
+    border-radius: 10px;
+    color: rgba(14, 165, 233, 1);
+    padding: 15px 10px;
+    font: inherit;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.main__link:hover {
+    color: #F8FAFC;
+    background:  rgba(14, 165, 233, 1);
+}
+
+

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<div class="creat-form">
+    
+    <form action="/registrar" method="POST" class="form__card">
+    <h2 class="card__title">Time: {{ time }}</h2>
+    
+    <input type="hidden" name="time" value="{{ time }}">
+
+    <div class="form__inputs">
+        <label>Seu Nome:</label>
+        <input type="text" name="nome" class="form__input" required>
+    </div>
+
+    <button type="submit" class="form__button">CONFIRMAR ESCOLHA</button>
+</form>
+
+</div>
