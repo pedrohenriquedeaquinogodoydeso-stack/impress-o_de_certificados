@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Certificado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="header">Certificado Oficial</div>
+
+<div class="container">
+
+    <div class="certificado" id="certificado">
+
+        <h2>CERTIFICADO</h2>
+
+        <p>Certificamos que</p>
+
+        <h1>{{ usuario.nome }}</h1>
+
+        <p>CPF: {{ usuario.cpf }}</p>
+        <p>Email: {{ usuario.email }}</p>
+        <p>Telefone: {{ usuario.telefone }}</p>
+        <p>Nível: {{ usuario.ensino }}</p>
+
+        <p>Concluiu com sucesso.</p>
+
+    </div>
+
+    <button onclick="imprimir()" class="print-btn">
+        🖨 Baixar / Imprimir
+    </button>
+
+</div>
+
+<script>
+function imprimir() {
+    window.print();
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <div class="header">Sistema de Certificados</div>
+</head>
+<body>
+
+
+<div class="container">
+
+
+
+
+    <h1>Cadastro para Certificado</h1>
+
+    <form method="POST">
+
+        <input type="text" name="nome" placeholder="Nome completo" required>
+        <input type="text" name="cpf" placeholder="CPF" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="telefone" placeholder="Telefone" required>
+
+        <label>Nível de Ensino:</label>
+
+        <div class="radio">
+            <input type="radio" name="ensino" value="Fundamental" required> Fundamental
+            <input type="radio" name="ensino" value="Médio"> Médio
+        </div>
+
+        <button type="submit">Gerar Certificado</button>
+
+    </form>
+</div>
+
+</body>
+</html>
